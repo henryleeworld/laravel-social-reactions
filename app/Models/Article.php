@@ -1,14 +1,15 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Cog\Contracts\Love\Reactable\Models\Reactable as ReactableContract;
 use Cog\Laravel\Love\Reactable\Models\Traits\Reactable;
 
 class Article extends Model implements ReactableContract
 {
-    use Reactable;
+    use HasFactory, Reactable;
 
     /**
      * The attributes that are mass assignable.

@@ -1,4 +1,4 @@
-# Laravel 7 社交反應
+# Laravel 8 社交反應
 
 引入 cybercog 的 laravel-love 套件來擴增通過對 Elpquent 模型的喜歡與不喜歡來表達他們對內容的感受，可以主動向用戶推薦內容，並獲取用戶對推薦是否喜歡的反饋。。
 
@@ -16,7 +16,16 @@ $ composer install
 ```sh
 $ php artisan key:generate
 ```
+- 執行 __Artisan__ 指令的 __migrate__ 來執行所有未完成的遷移，並執行資料庫填充（如果要測試的話）。
+```sh
+$ php artisan migrate --seed
+```
+- 執行 __Artisan__ 指令的 __love:reaction-type-add --default__ 來新增`喜歡`和`不喜歡`類型。
+```sh
+$ php artisan love:reaction-type-add --default
+```
 - 在瀏覽器中輸入已定義的路由 URL 來訪問，例如：http://127.0.0.1:8000。
+- 你可以經由 `/social-reaction` 來進行社交反應，
 
 ----
 

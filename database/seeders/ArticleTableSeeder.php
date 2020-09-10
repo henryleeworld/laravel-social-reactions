@@ -1,7 +1,9 @@
 <?php
+namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\Article;
+use Illuminate\Support\Facades\DB;
+use App\Models\Article;
 
 class ArticleTableSeeder extends Seeder
 {
@@ -14,7 +16,7 @@ class ArticleTableSeeder extends Seeder
     {
         DB::table('articles')->truncate();
         Article::unguard();
-        factory(Article::class, 10)->create();
+        Article::factory()->times(10)->create();
         Article::reguard();
     }
 }
