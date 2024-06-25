@@ -18,12 +18,10 @@ use Cog\Laravel\Love\ReactionType\Models\ReactionType;
 use Cog\Laravel\Love\Support\Database\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-final class CreateLoveReactionsTable extends Migration
+return new class extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
     public function up(): void
     {
@@ -73,11 +71,9 @@ final class CreateLoveReactionsTable extends Migration
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
     public function down(): void
     {
         $this->schema->dropIfExists((new Reaction())->getTable());
     }
-}
+};

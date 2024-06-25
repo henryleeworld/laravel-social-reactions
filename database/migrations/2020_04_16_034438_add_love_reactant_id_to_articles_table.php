@@ -15,17 +15,14 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-final class AddLoveReactantIdToArticlesTable extends Migration
+return new class extends Migration
 {
     public function up(): void
     {
         Schema::table('articles', function (Blueprint $table) {
-            $table->unsignedBigInteger('love_reactant_id')->nullable();
-
-            $table
-                ->foreign('love_reactant_id')
-                ->references('id')
-                ->on('love_reactants');
+            $table->foreignId('love_reactant_id')
+                  ->nullable()
+                  ->constrained();
         });
     }
 
@@ -36,4 +33,4 @@ final class AddLoveReactantIdToArticlesTable extends Migration
             $table->dropColumn('love_reactant_id');
         });
     }
-}
+};

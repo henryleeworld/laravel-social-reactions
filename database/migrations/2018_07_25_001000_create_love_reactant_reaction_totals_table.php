@@ -15,12 +15,10 @@ use Cog\Laravel\Love\Reactant\ReactionTotal\Models\ReactionTotal;
 use Cog\Laravel\Love\Support\Database\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-final class CreateLoveReactantReactionTotalsTable extends Migration
+return new class extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
     public function up(): void
     {
@@ -41,11 +39,9 @@ final class CreateLoveReactantReactionTotalsTable extends Migration
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
     public function down(): void
     {
         $this->schema->dropIfExists((new ReactionTotal())->getTable());
     }
-}
+};
