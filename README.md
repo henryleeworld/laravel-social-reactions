@@ -1,4 +1,4 @@
-# Laravel 10 社交反應
+# Laravel 11 社交反應
 
 引入 cybercog 的 laravel-love 套件來擴增通過對 Elpquent 模型的喜歡與不喜歡來表達他們對內容的感受，可以主動向用戶推薦內容，並獲取用戶對推薦是否喜歡的反饋。。
 
@@ -30,5 +30,5 @@ $ php artisan love:reaction-type-add --default
 ----
 
 ## 畫面截圖
-![](https://i.imgur.com/saBILmq.png)
+![](https://i.imgur.com/SLBu5tL.png)
 > 社交媒體逐漸成為我們表達自我、塑造自我認同、形成和建立關係、了解周圍世界的地方

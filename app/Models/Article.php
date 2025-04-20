@@ -14,14 +14,9 @@ class Article extends Model implements ReactableInterface
     /**
      * The attributes that are mass assignable.
      *
-     * @var array
+     * @var array<int, string>
      */
     protected $fillable = [
         'title', 'slug', 'body', 'created_at', 'updated_at',
-    ];
-
-    protected $dates = [
-        'created_at',
-        'updated_at',
     ];
 }

@@ -10,11 +10,10 @@ use Cog\Laravel\Love\Reacterable\Models\Traits\Reacterable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable implements ReacterableInterface, ReactableInterface
 {
-    use HasApiTokens, HasFactory, Notifiable, Reactable, Reacterable;
+    use HasFactory, Notifiable, Reactable, Reacterable;
 
     /**
      * The attributes that are mass assignable.
@@ -38,12 +37,15 @@ class User extends Authenticatable implements ReacterableInterface, ReactableInt
     ];
 
     /**
-     * The attributes that should be cast.
+     * Get the attributes that should be cast.
      *
-     * @var array<string, string>
+     * @return array<string, string>
      */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-        'password' => 'hashed',
-    ];
+    protected function casts(): array
+    {
+        return [
+            'email_verified_at' => 'datetime',
+            'password' => 'hashed',
+        ];
+    }
 }

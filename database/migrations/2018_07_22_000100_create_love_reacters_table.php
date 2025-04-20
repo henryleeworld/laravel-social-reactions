@@ -23,7 +23,7 @@ return new class extends Migration
     public function up(): void
     {
         $this->schema->create((new Reacter())->getTable(), function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->id();
             $table->string('type');
             $table->timestamps();
 

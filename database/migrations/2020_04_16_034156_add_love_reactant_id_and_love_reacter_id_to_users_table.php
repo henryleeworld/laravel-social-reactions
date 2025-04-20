@@ -17,18 +17,29 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
+    /**
+     * Run the migrations.
+     */
     public function up(): void
     {
         Schema::table('users', function (Blueprint $table) {
+            $table->foreignId('love_reactant_id')
+                  ->nullable()
+                  ->constrained();
             $table->foreignId('love_reacter_id')
                   ->nullable()
                   ->constrained();
         });
     }
 
+    /**
+     * Reverse the migrations.
+     */
     public function down(): void
     {
         Schema::table('users', function (Blueprint $table) {
+            $table->dropForeign(['love_reactant_id']);
+            $table->dropColumn('love_reactant_id');
             $table->dropForeign(['love_reacter_id']);
             $table->dropColumn('love_reacter_id');
         });
