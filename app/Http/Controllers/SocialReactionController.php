@@ -7,6 +7,9 @@ use App\Models\User;
 
 class SocialReactionController extends Controller
 {
+    /**
+     * Display a listing of the resource.
+     */
     public function index()
     {
         $user = User::findOrFail(1);
