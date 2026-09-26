@@ -1,4 +1,4 @@
-# Laravel 12 社交反應
+# Laravel 13 社交反應
 
 引入 cybercog 的 laravel-love 套件來擴增通過對 Elpquent 模型的喜歡與不喜歡來表達他們對內容的感受，可以主動向用戶推薦內容，並獲取用戶對推薦是否喜歡的反饋。
 
@@ -20,9 +20,17 @@ $ php artisan key:generate
 ```sh
 $ php artisan migrate --seed
 ```
-- 執行 __Artisan__ 指令的 __love:reaction-type-add --default__ 來新增`喜歡`和`不喜歡`類型。
+- 執行 __Artisan__ 指令的 __love:reaction-type-add__ 來新增`喜歡`和`不喜歡`互動類型。
 ```sh
 $ php artisan love:reaction-type-add --default
+```
+- 執行 __Artisan__ 指令的 __love:register-reacters__ 來建立互動者模型。
+```sh
+$ php artisan love:register-reacters --model="App\Models\{模型名稱}"
+```
+- 執行 __Artisan__ 指令的 __love:register-reactants__ 來建立互動目標模型。
+```sh
+$ php artisan love:register-reactants --model="App\Models\{模型名稱}"
 ```
 - 在瀏覽器中輸入已定義的路由 URL 來訪問，例如：http://127.0.0.1:8000。
 - 你可以經由 `/social-reaction` 來進行社交反應，
@@ -30,5 +38,5 @@ $ php artisan love:reaction-type-add --default
 ----
 
 ## 畫面截圖
-![](https://i.imgur.com/XKL2GZ6.png)
+![](https://i.imgur.com/cPVq6ab.png)
 > 社交媒體逐漸成為我們表達自我、塑造自我認同、形成和建立關係、了解周圍世界的地方
